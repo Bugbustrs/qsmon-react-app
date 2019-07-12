@@ -9,6 +9,9 @@ import Measurements from './components/measurements/measurements_home';
 import {BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/header';
 import Results from './components/results/results_home';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
@@ -26,6 +29,20 @@ function App() {
 </CustomLayout>
 
 </BrowserRouter>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
