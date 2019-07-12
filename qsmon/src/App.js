@@ -12,37 +12,15 @@ import Results from './components/results/results_home';
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import CustomLayout from './containers/Layout'
+import CustomLine from './components/charts/Line';
 function App() {
   return (
     <div className="App">
-  
-
-  <BrowserRouter>
-  <Header>   </Header>
-<CustomLayout >
-  
-
-  <Route path ='/run_measurements' component ={Measurements}/>
-  <Route path ='/view_results' component ={Results}/>
-
-</CustomLayout>
-
-</BrowserRouter>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <CustomLayout>
+<CustomLine/>
+     </CustomLayout>
     </div>
   );
 }
