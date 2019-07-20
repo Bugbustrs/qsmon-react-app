@@ -1,15 +1,25 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap'
+import 'jquery/dist/jquery.slim'
+import 'popper.js'
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import CustomLayout from './containers/Layout'
+import CustomLayout from './containers/Layout';
 import CustomLine from './components/charts/Line';
+import Measurements from './components/measurements/measurements_home';
+import PingForm from './components/measurements/ping';
+import {BrowserRouter, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-     <CustomLayout>
-<CustomLine/>
-     </CustomLayout>
+  
+
+  <BrowserRouter>
+<CustomLayout ><Measurements/>
+</CustomLayout>
+
+</BrowserRouter>
     </div>
   );
 }
