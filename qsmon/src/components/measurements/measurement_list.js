@@ -1,18 +1,26 @@
 import React from 'react';
-import { NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 export default function measurementList() {
 
 
     return (
-      <div>
-      <ul className="nav flex-column">
-  <NavLink className="list-group-item list-group-item-action" to='/traceroute'>trace route</NavLink> 
-  <NavLink className="list-group-item list-group-item-action" to='/ping'>ping</NavLink>
-  <NavLink className="list-group-item list-group-item-action" to='/dns_lookup'>DNS Lookup</NavLink>
-  <NavLink className="list-group-item list-group-item-action" to='/http'>HTTP</NavLink>
-  <NavLink className="list-group-item list-group-item-action" to='/tcp_speed_test'>TCP Speed Test</NavLink>
+      <ul class="nav flex-column">
+  <li class="nav-item">
+  <NavLink to='/trace_route'>trace route</NavLink>  </li>
+  <li class="nav-item">
+  <NavLink to='/ping'>ping</NavLink>
+  </li>
+  <li class="nav-item">
+  <NavLink to='/DNS_Lookup'>DNS Lookup</NavLink>
+  </li>
+  <li class="nav-item">
+  <NavLink to='/http'>HTTP</NavLink>
+
+  </li>
+  <li class="nav-item">
+  <NavLink to='/TCP_Speed_Test'>TCP Speed Test</NavLink>
+  </li>
 </ul>
-<br></br>
-</div>
+
     );
   }
