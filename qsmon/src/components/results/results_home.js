@@ -1,10 +1,13 @@
 import React from 'react';
 import {Container,Col, Row, Button} from 'react-bootstrap'
-
-import List from './results_list';
+import List from './measurement_list';
+import Ping from './ping';
+import HTTP from './http';
+import DNS from './dns';
+import TCPSpeedTest from './tcp_speed_test';
+import TraceRoute from './trace_route'
 import {BrowserRouter, Route } from 'react-router-dom';
-import DNSResult from './dns/dns_wrapper'
-import DNSGraph from './dns/dns_graph'
+
 
 
 export default function MeasurementList() {
@@ -16,12 +19,11 @@ export default function MeasurementList() {
     <Row>
       <Col md='3'><List/></Col>
       <Col md='9'>
-        <Route path='/results/ping' component ={List}/>
-        <Route path='/results/traceroute' component={List}/>
-        <Route path='/results/dns' component={DNSResult}/>
-        <Route path='/results/http' component={DNSGraph}/>
-        <Route path='/results/tcp' component={List}/>
+        <Route path='/result_lists' component ={Ping}/>
+        <Route path='/results_home' component={DNS}/>
+      
        </Col>
+
     </Row>
   </Container>
   </BrowserRouter>

@@ -19,7 +19,7 @@ export default function MeasurementList() {
     <Row>
       <Col md='3'><List/></Col>
       <Col md='9'>
-        <Route path='/ping' component ={Ping}/>
+        <Route exact path='/ping' component ={Ping}/>
         <Route path='/DNS_Lookup' component={DNS}/>
         <Route path='/trace_route' component={TraceRoute}/>
         <Route path='/http' component={HTTP}/>
