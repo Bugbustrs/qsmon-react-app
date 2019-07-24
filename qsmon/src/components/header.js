@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 export default function header(){
     return (
         <nav className="navbar navbar-expand-md bg-dark navbar-dark">
-        <NavLink className="navbar-brand" href="#">QSMON Platform</NavLink>
+        <NavLink className="navbar-brand" to="#">QSMON Platform</NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon"></span>
         </button>
