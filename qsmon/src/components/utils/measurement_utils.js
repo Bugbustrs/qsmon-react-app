@@ -1,10 +1,13 @@
-import measurementList from "../measurements/measurement_list";
 
 function getKey()
 {
   return Math.random().toString(36).substring(2, 16) + Math.random().toString(36).substring(2, 16);
 }
 
+
+const formatDate = date =>{
+  return new Date(date).toISOString();
+}
 /*
 generates a post request object from the state of the app
 */
@@ -14,13 +17,14 @@ function getPostObject(state)
 let measurement_description = { 
             type:state.type,
             key:getKey(),
-            start_time:state.start_time,
-            end_time:state.end_time,
+            start_time:formatDate(state.start_time),
+            end_time:formatDate(state.end_time),
             interval_sec:state.interval_sec,
             priority:state.priority,
           parameters:{
            target:state.target,
-           server:"null"   
+           server:"null",
+           direction:state.tcp_speed_test,   
           }
           };
 let job_description = {
@@ -36,6 +40,12 @@ return result;
 
 let format =val =>{
   return val>9?val:'0'+val;
+};
+
+const getType = type  =>{
+const map ={"/tcp_speed_test":"TCP Speed Test",'/ping':"Ping Test","/dns_lookup":"DNS Lookup Test",'/traceroute':'Traceroute Test','/http':'HTTP Test'};
+
+return map[type];
 }
 
-export  {format,getKey,getPostObject}
+export  {format,getKey,getPostObject,getType}
