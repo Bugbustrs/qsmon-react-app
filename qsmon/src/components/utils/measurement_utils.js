@@ -10,9 +10,32 @@ generates a post request object from the state of the app
 */
 function getPostObject(state)
 {
-    let result={};
-let measurement_description={
-    
-};
+
+let measurement_description = { 
+            type:state.type,
+            key:getKey(),
+            start_time:state.start_time,
+            end_time:state.end_time,
+            interval_sec:state.interval_sec,
+            priority:state.priority,
+          parameters:{
+           target:state.target,
+           server:"null"   
+          }
+          };
+let job_description = {
+  measurement_description,
+  node_count:state.node_count,
+  job_interval:state.job_interval
 }
-export  {getKey,getPostObject}
+
+let result={job_description, request_type:"SCHEDULE_MEASUREMENT" ,user_id:getKey(), };
+
+return result;
+}
+
+let format =val =>{
+  return val>9?val:'0'+val;
+}
+
+export  {format,getKey,getPostObject}
