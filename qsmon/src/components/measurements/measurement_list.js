@@ -4,23 +4,16 @@ export default function measurementList() {
 
 
     return (
+      <div>
       <ul className="nav flex-column">
-  <li className="nav-item">
-  <NavLink to='/traceroute'>trace route</NavLink>  </li>
-  <li className="nav-item">
-  <NavLink to='/ping'>ping</NavLink>
-  </li>
-  <li className="nav-item">
-  <NavLink to='/dns_lookup'>DNS Lookup</NavLink>
-  </li>
-  <li className="nav-item">
-  <NavLink to='/http'>HTTP</NavLink>
+  <NavLink className="list-group-item list-group-item-action" to='/traceroute'>trace route</NavLink> 
+  <NavLink className="list-group-item list-group-item-action" to='/ping'>ping</NavLink>
+  <NavLink className="list-group-item list-group-item-action" to='/dns_lookup'>DNS Lookup</NavLink>
+  <NavLink className="list-group-item list-group-item-action" to='/http'>HTTP</NavLink>
 
-  </li>
-  <li className="nav-item">
-  <NavLink to='/tcp_speed_test'>TCP Speed Test</NavLink>
-  </li>
+  <NavLink className="list-group-item list-group-item-action" to='/tcp_speed_test'>TCP Speed Test</NavLink>
 </ul>
-
+<br></br>
+</div>
     );
   }
