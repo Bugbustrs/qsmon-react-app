@@ -5,11 +5,10 @@ import 'popper.js'
 import React from 'react';
 import './App.css';
 import CustomLayout from './containers/Layout';
-import CustomLine from './components/charts/Line';
 import Measurements from './components/measurements/measurements_home';
 import {BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/header';
-import Results from './components/results/results_list';
+import Results from './components/results/results_home';
 
 function App() {
   return (
