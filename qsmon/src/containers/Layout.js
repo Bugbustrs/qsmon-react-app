@@ -7,7 +7,7 @@ export default function FixedContainer(props) {
     <Container>
        <br></br>
       <br></br>
-      <hr></hr>
+   
      
   {props.children}
 
