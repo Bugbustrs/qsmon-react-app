@@ -1,0 +1,21 @@
+{
+    "name": "qsmon",
+    "version": "1.0.0",
+    "description": "Quality of service monitoring platform",
+    "engines": {
+      "node": "10.x"
+    },  
+    "scripts": {
+        "start": "node server",
+        "build": "cd qsmon/ && npm install && npm run build"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-favicon": "^2.0.1",
+        "path": "^0.12.7"
+    },
+    "cacheDirectories": [
+        "node_modules",
+        "qsmon/node_modules"
+      ]
+}
