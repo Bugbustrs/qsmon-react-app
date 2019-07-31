@@ -98,10 +98,7 @@ handleSubmit = e =>{
       <option>10</option>
     </select>
     </div>
-    <div className='col-md-6 col-10 text-left'>
-    <label htmlFor="interval_sec">Interval between measurements</label>
-    <input value={this.state.interval_sec} onChange={this.handleChange1}  className ='form-control' type="number" name="interval_sec" placeholder='enter a number'/>
-    </div>
+ 
   </div>
         </div>
         <div className=" form-row">
