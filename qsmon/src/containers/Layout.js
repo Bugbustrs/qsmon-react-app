@@ -14,4 +14,8 @@ export default function FixedContainer(props) {
    
 </Container>
   );
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 5742ae578e1914eab25c7662ab8ca5cc4d0a5a07
