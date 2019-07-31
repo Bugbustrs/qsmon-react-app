@@ -48,8 +48,4 @@ const map ={"/tcp_speed_test":"TCP Speed Test",'/ping':"Ping Test","/dns_lookup"
 return map[type];
 }
 
-<<<<<<< HEAD
 export  {format,getKey,getPostObject,getType}
-=======
-export  {format,getKey,getPostObject,getType}
->>>>>>> 5742ae578e1914eab25c7662ab8ca5cc4d0a5a07
