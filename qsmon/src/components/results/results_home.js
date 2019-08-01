@@ -15,11 +15,11 @@ export default function MeasurementList() {
     <Row>
       <Col md='3'><List/></Col>
       <Col md='9'>
-        <Route path='/results/ping' component ={List}/>
-        <Route path='/results/traceroute' component={List}/>
+        <Route path='/results/ping' component ={DNSResult}/>
+        <Route path='/results/traceroute' component={DNSResult}/>
         <Route path='/results/dns' component={DNSResult}/>
         <Route path='/results/http' component={DNSResult}/>
-        <Route path='/results/tcp' component={List}/>
+        <Route path='/results/tcp' component={DNSResult}/>
        </Col>
     </Row>
   </Container>
