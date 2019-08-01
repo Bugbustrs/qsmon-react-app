@@ -1,6 +1,6 @@
 import React from 'react';
-import Detail from './dns_detail';
-import Graph from './dns_graph';
+import Detail from './dns/dns_detail';
+import Graph from './dns/dns_graph';
 import axios  from 'axios';
 
 export default class Wrapper extends React.Component{
@@ -21,7 +21,9 @@ onClickHandler =()=>{
 
 componentDidMount()
 {
-axios.get('http://196.24.142.134:7800/').then(data=>{
+    console.log(this.props.location.pathname);
+let queryParams ='type'+this.props.location.pathname;
+axios.get('http://example.com/?'+queryParams).then(data=>{
 this.setState({data});
 console.log(data);
 }).catch((e)=> {console.log(e);});

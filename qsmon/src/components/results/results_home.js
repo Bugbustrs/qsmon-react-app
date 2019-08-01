@@ -3,8 +3,7 @@ import {Container,Col, Row, Button} from 'react-bootstrap'
 
 import List from './results_list';
 import {BrowserRouter, Route } from 'react-router-dom';
-import DNSResult from './dns/dns_wrapper'
-import DNSGraph from './dns/dns_graph'
+import DNSResult from './results_wrapper'
 
 
 export default function MeasurementList() {
@@ -19,7 +18,7 @@ export default function MeasurementList() {
         <Route path='/results/ping' component ={List}/>
         <Route path='/results/traceroute' component={List}/>
         <Route path='/results/dns' component={DNSResult}/>
-        <Route path='/results/http' component={DNSGraph}/>
+        <Route path='/results/http' component={DNSResult}/>
         <Route path='/results/tcp' component={List}/>
        </Col>
     </Row>
