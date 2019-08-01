@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container,Col, Row, Button} from 'react-bootstrap'
+import {Container,Col, Row} from 'react-bootstrap'
 
 import List from './results_list';
 import {BrowserRouter, Route } from 'react-router-dom';
