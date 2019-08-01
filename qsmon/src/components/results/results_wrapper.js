@@ -32,7 +32,7 @@ componentDidMount()
 {
 let path =this.props.location.pathname;
 let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
-axios.get('http://example.com/?'+queryParams).then(data=>{
+axios.get('http://196.24.183.18:7800/?'+queryParams).then(data=>{
 this.setState({data});
 console.log(queryParams);
 console.log(data);
