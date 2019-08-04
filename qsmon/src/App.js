@@ -9,17 +9,17 @@ import Measurements from './components/measurements/measurements_home';
 import {BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/header';
 import Results from './components/results/results_home';
-
+import WelcomePage from './components/welcome'
 function App() {
   return (
     <div className="App">
   
 
   <BrowserRouter>
-  <Header>   </Header>
-<CustomLayout >
-  
+  <Header/>   
+  <Route path='/' exact component ={WelcomePage}/>
 
+<CustomLayout >
   <Route path ='/run_measurements' component ={Measurements}/>
   <Route path ='/view_results' component ={Results}/>
 
