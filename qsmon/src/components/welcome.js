@@ -5,7 +5,7 @@ export default function welcome(props)
     return (
         <div className='tes'>
             <div className='bg'>
-           <img src='https://ak0.picdn.net/shutterstock/videos/14637160/thumb/1.jpg'/>
+           <img alt='' src='https://ak0.picdn.net/shutterstock/videos/14637160/thumb/1.jpg'/>
                 <div className='banner mt-5 container'>
                     <div className='jumbotron'>
                     <h3 className='text-center'>Quality Of Service Monitoring Platform</h3>

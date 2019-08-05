@@ -23,7 +23,7 @@ let measurement_description = {
             interval_sec:1,
             priority:state.priority,
           parameters:{
-           target:state.target,
+           target:state.target.substring(8),
            server:"null",
            direction:state.tcp_speed_test,   
           }
