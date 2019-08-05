@@ -6,7 +6,8 @@ function getKey()
 
 
 const formatDate = date =>{
-  return new Date(date).toISOString();
+
+return date.toString()+":00.000Z";
 }
 /*
 generates a post request object from the state of the app
