@@ -51,7 +51,7 @@ handleSubmit = e =>{
  //console.log(this.state);
   let data = getPostObject(this.state);
  console.log(data)
-  axios.post('http://196.24.183.18:7800/',data).then(res=>{
+  axios.post('http://196.24.161.117/',data).then(res=>{
     console.log(res);
   });
 }

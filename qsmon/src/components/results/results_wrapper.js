@@ -21,7 +21,7 @@ export default class Wrapper extends React.Component{
 
     }
 onClickHandler =()=>{
-    let newTitle = this.state.showGraph?"show Graph":"show Detail";
+    let newTitle = this.state.showGraph?"show graph":"show detail";
 
     this.setState({showGraph:!this.state.showGraph,title:newTitle});
 
@@ -32,7 +32,8 @@ componentDidMount()
 {
 let path =this.props.location.pathname;
 let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
-axios.get('http://196.24.183.18:7800/?'+queryParams).then(data=>{
+
+axios.get('http://localhost:5000/results?'+queryParams).then(data=>{
 this.setState({data});
 console.log(queryParams);
 console.log(data);
@@ -42,28 +43,28 @@ console.log(data);
  let graph = null;
  let detail =null;
  let path =this.props.location.pathname;
-
+let data1 =this.state.data;
         switch(path.substring(path.indexOf('/',2)+1))
         {
             case "dns":
-                graph = <DNSGraph/>;
-                detail = <DNSDetail></DNSDetail>;
+                graph = <DNSGraph data ={data1['data']}/>;
+                detail = <DNSDetail data ={data1['data']} ></DNSDetail>;
                 break;
             case 'http':
-                graph = <HttpGraph></HttpGraph>;
-                detail = <HttpDetail></HttpDetail>;
+                graph = <HttpGraph data ={data1['data']} ></HttpGraph>;
+                detail = <HttpDetail data ={data1['data']} ></HttpDetail>;
                 break;
             case 'ping':
-                graph = <PingGraph/>
-                detail = <PingDetail/>
+                graph = <PingGraph data ={data1['data']} />
+                detail = <PingDetail data ={data1['data']} />
                 break;
             case 'tcp':
-                graph =<TCPGraph></TCPGraph>;
-                detail = <TCPDetail></TCPDetail>
+                graph =<TCPGraph data ={data1['data']}></TCPGraph>;
+                detail = <TCPDetail data ={data1['data']}></TCPDetail>
                 break;
             case 'traceroute':
-                graph =<TracerouteGraph/>;
-                detail = <TracerouteDetail/>;
+                graph =<TracerouteGraph data ={data1['data']}/>;
+                detail = <TracerouteDetail data ={data1['data']}/>;
                  break;
 
             default:
