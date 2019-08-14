@@ -16,7 +16,6 @@ export default function MeasurementList() {
       <Col md='3'><List/></Col>
       <Col md='9'>
         <Route path='/results/ping' component ={DNSResult}/>
-        <Route path='/results/traceroute' component={DNSResult}/>
         <Route path='/results/dns' component={DNSResult}/>
         <Route path='/results/http' component={DNSResult}/>
         <Route path='/results/tcp' component={DNSResult}/>

@@ -3,9 +3,15 @@ import {format, getPostObject, getType} from '../utils/measurement_utils';
 import axios from 'axios';
 import AddressForm from './address_form';
 import RadioForm from './tcp_speed_test_form';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default class Description extends React.Component
 {
+
+
   constructor(props)
   {
     super(props);
@@ -24,7 +30,11 @@ export default class Description extends React.Component
 console.log(this.props.location.pathname);
     this.handleChange = this.handleChange.bind(this);
   }
-
+notify =()=>{
+  
+  toast.error("An error occurred!", {
+    position: toast.POSITION.TOP_CENTER  });
+};
 
   handleChange(event)
 {
@@ -51,9 +61,10 @@ handleSubmit = e =>{
  //console.log(this.state);
   let data = getPostObject(this.state);
  console.log(data)
-  axios.post('http://196.24.161.117/',data).then(res=>{
+  axios.post('http://jchavula-1.cs.uct.ac.za:7800',data).then(res=>{
     console.log(res);
   });
+  this.notify();
 }
 
   render(){
@@ -113,7 +124,9 @@ handleSubmit = e =>{
     </div>
   </div>
 <br/>
- {Form}  
+ {Form}
+ <ToastContainer autoClose={8000}/>
+  
     </form> 
     </React.Fragment>
     )

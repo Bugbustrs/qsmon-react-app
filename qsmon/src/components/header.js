@@ -2,6 +2,12 @@ import React from 'react';
 import { NavLink} from 'react-router-dom';
 
 export default function header(){
+
+  const onClick =(event)=>{
+    localStorage.removeItem('email');
+    window.location.reload();
+    event.preventDefault();
+  }
     return (
         <nav className="navbar navbar-expand-md bg-dark navbar-dark">
         <NavLink className="navbar-brand" to="/">QSMON Platform</NavLink>
@@ -20,7 +26,7 @@ export default function header(){
           </ul>
           <ul className='navbar-nav '>
           <li className="nav-item">
-              <NavLink className="nav-link" to="logout">logout</NavLink>
+              <NavLink className="nav-link" onClick={onClick} to="logout">logout</NavLink>
             </li>   
           </ul>
         </div>  

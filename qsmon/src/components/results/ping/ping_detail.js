@@ -1,13 +1,10 @@
 // here i want to display multiple data in json.
 
 import React from 'react';
-import moment from 'moment';
 
 export default  function dns_detail(props){
 
-let dns_data=[{'values':[{'address':'www.test.com'},{'real_hostname':'190.12.12.1'},{'time_ms':21.3}]},
- {'values':[{'address':'www.example.com'},{'real_hostname':'190.12.12.123'},{'time_ms':23.7}]}
-  ];
+
   let data = props.data;
     return (
      <React.Fragment>

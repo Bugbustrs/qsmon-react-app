@@ -8,8 +8,7 @@ import PingDetail from './ping/ping_detail';
 import PingGraph from './ping/ping_graph';
 import TCPDetail from './tcp/tcp_detail';
 import TCPGraph from './tcp/tcp_graph';
-import TracerouteDetail from './traceroute/traceroute_detail';
-import TracerouteGraph from './traceroute/traceroute_graph';
+
 
 
 export default class Wrapper extends React.Component{
@@ -17,7 +16,7 @@ export default class Wrapper extends React.Component{
     constructor(props)
     {
         super(props);
-        this.state ={showGraph:false,title:"show graph",data:""};
+        this.state ={showGraph:true,title:"show graph",data:""};
 
     }
 onClickHandler =()=>{
@@ -32,8 +31,8 @@ componentDidMount()
 {
 let path =this.props.location.pathname;
 let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
-
-axios.get('http://localhost:5000/results?'+queryParams).then(data=>{
+let type =path.substring(path.indexOf('/',2)+1);
+axios.get('http://localhost:5000/results/'+type+'?'+queryParams).then(data=>{
 this.setState({data});
 console.log(queryParams);
 console.log(data);
@@ -62,10 +61,7 @@ let data1 =this.state.data;
                 graph =<TCPGraph data ={data1['data']}></TCPGraph>;
                 detail = <TCPDetail data ={data1['data']}></TCPDetail>
                 break;
-            case 'traceroute':
-                graph =<TracerouteGraph data ={data1['data']}/>;
-                detail = <TracerouteDetail data ={data1['data']}/>;
-                 break;
+         
 
             default:
                 graph = <pre>an error happened</pre>;

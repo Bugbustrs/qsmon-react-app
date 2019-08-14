@@ -1,5 +1,5 @@
 import React from 'react';
-import {  ResponsiveContainer,Area,AreaChart,LineChart,Brush, ComposedChart,Bar,Legend, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import {  ResponsiveContainer,Brush, ComposedChart,Legend, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import moment from 'moment';
 
 function formatXAxis(tickItem) {
@@ -44,6 +44,39 @@ console.log(props.data);
 
       </ComposedChart>
       </ResponsiveContainer>
+
+
+      <ResponsiveContainer width="100%" height={400}>
+        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <Line type="monotone" dataKey="min_rtt_ms" stroke ="#82ca9d"/>
+        <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+        <XAxis dataKey="date"   domain = {['auto', 'auto']}
+      tickFormatter={formatXAxis}
+  type='number'/>
+        <YAxis />
+        <Tooltip content={<CustomTooltip />}/>
+        <Legend/>
+        <Brush />
+
+      </ComposedChart>
+      </ResponsiveContainer>
+
+      <ResponsiveContainer width="100%" height={400}>
+        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <Line type="monotone" dataKey="max_rtt_ms" stroke ="#FF5733"/>
+        <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+        <XAxis dataKey="date"   domain = {['auto', 'auto']}
+      tickFormatter={formatXAxis}
+  type='number'/>
+        <YAxis />
+        <Tooltip content={<CustomTooltip />}/>
+        <Legend/>
+        <Brush />
+
+      </ComposedChart>
+      </ResponsiveContainer>
+
+
 </div>
     );
     return (

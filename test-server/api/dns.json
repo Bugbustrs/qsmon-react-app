@@ -1,0 +1,252 @@
+[
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 25.12
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 40.91
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 61.9
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 95.15
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 66.96
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 96.59
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 92.55
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 18.01
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 69.43
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 91.83
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 82.21
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 3.87
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 52.22
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 9.75
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 16.5
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 32.61
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 24.7
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 24.22
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 87.16
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 32.84
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 12.52
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 77.9
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 55.67
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 15.06
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 98.85
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 74.51
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 45.19
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 23.98
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 99.79
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 91.96
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 71.98
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 18.19
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 70.69
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 23.74
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 16.26
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 66.53
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 29.89
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 73.08
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 54.58
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 63.63
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 53.73
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 98.73
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 28.22
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 2.92
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 81.03
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 47.38
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 78.4
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 52.03
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 68.89
+    },
+    {
+        "address": "www.example.com",
+        "real_hostname": "192.23.142.12",
+        "time_ms": 51.85
+    }
+]
