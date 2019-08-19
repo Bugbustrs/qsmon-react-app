@@ -16,7 +16,7 @@ export default class Wrapper extends React.Component{
     constructor(props)
     {
         super(props);
-        this.state ={showGraph:true,title:"show graph",data:""};
+        this.state ={showGraph:true,title:"show detail",data:""};
 
     }
 onClickHandler =()=>{
@@ -30,20 +30,22 @@ onClickHandler =()=>{
 componentDidMount()
 {
 let path =this.props.location.pathname;
-let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
-let type =path.substring(path.indexOf('/',2)+1);
-axios.get('http://localhost:5000/results/'+type+'?'+queryParams).then(data=>{
+console.log(JSON.stringify(this.props.location));
+let params = new URLSearchParams(this.props.location.search);
+
+console.log(params.get('type'));
+
+axios.get('https://jchavula-1.cs.uct.ac.za:7800/results/'+this.props.location.search).then(data=>{
 this.setState({data});
-console.log(queryParams);
 console.log(data);
 }).catch((e)=> {console.log(e);});
 }
     render(){
  let graph = null;
  let detail =null;
- let path =this.props.location.pathname;
-let data1 =this.state.data;
-        switch(path.substring(path.indexOf('/',2)+1))
+ let params = new URLSearchParams(this.props.location.search);
+ let data1 =this.state.data;
+        switch(params.get('type'))
         {
             case "dns":
                 graph = <DNSGraph data ={data1['data']}/>;

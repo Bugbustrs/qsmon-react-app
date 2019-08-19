@@ -4,7 +4,7 @@ import { NavLink} from 'react-router-dom';
 export default function header(){
 
   const onClick =(event)=>{
-    localStorage.removeItem('email');
+    localStorage.removeItem('user');
     window.location.reload();
     event.preventDefault();
   }

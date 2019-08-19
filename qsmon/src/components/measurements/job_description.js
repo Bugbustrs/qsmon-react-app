@@ -32,7 +32,7 @@ console.log(this.props.location.pathname);
   }
 notify =()=>{
   
-  toast.error("An error occurred!", {
+  toast.success("Job scheduled", {
     position: toast.POSITION.TOP_CENTER  });
 };
 
@@ -61,9 +61,9 @@ handleSubmit = e =>{
  //console.log(this.state);
   let data = getPostObject(this.state);
  console.log(data)
-  axios.post('http://jchavula-1.cs.uct.ac.za:7800',data).then(res=>{
+  axios.post('http://jchavula-1.cs.uct.ac.za:7800/',data).then(res=>{
     console.log(res);
-  });
+  }).catch((e)=>{console.log(e)});
   this.notify();
 }
 

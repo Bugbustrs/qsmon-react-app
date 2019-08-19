@@ -17,7 +17,7 @@ function App() {
 
   <BrowserRouter>
     
-  {localStorage.getItem('email')===null?<LoginPage></LoginPage>:<AuthenticatedPage></AuthenticatedPage>}
+  {localStorage.getItem('user')===null?<LoginPage></LoginPage>:<AuthenticatedPage></AuthenticatedPage>}
 
 </BrowserRouter>
     </div>
