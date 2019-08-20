@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default  function Login(){
-    const [value,setValue] = React.useState({email:'',user_type:''});
+    const [value,setValue] = React.useState({email:'',user_type:'Researcher'});
 
 
     const onChange = event =>{
@@ -15,7 +15,7 @@ export default  function Login(){
         event.preventDefault();
       
        if (value.email.length>5) { 
-           localStorage.setItem('user',value);
+           localStorage.setItem('user',JSON.stringify(value));
             window.location.reload();}
       console.log(value);
     }

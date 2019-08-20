@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 export default class List extends React.Component{
     constructor(props){
         super(props);
-        this.state ={data:''}
+        this.state ={data:null}
     }
 
     componentDidMount()
@@ -29,7 +29,7 @@ this.props.history.push('/results');
 }
 
     render(){
-let data = [{type:'ping',rtt:12,id:"we23"},{type:'ping',rtt:22,id:"e3r3"},{type:'ping',rtt:32,id:"er32w"}]
+let data = this.state.data||[{type:'ping',rtt:12,id:"we23"},{type:'ping',rtt:22,id:"e3r3"},{type:'ping',rtt:32,id:"er32w"}]
 
 let path =this.props.location.pathname;
         let type=path.substring(path.indexOf('/',2)+1);

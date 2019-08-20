@@ -18,3 +18,6 @@ This project has two important folders to take note of.
 4. Change to the qsmon folder by doing *cd qsmon* and run `npm install` again, you guessed it, this will install the dependencies for the files in qsmon folder.
 5. While on the qsmon folder, run `npm start` and wait for a browser page of the project to open. This will start a nodejs server that will server our react files.
 6. After this you can now interact with the client.
+
+## End points
+
