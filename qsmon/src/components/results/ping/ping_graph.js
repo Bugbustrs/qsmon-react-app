@@ -11,7 +11,7 @@ function formatXAxis(tickItem) {
         if (active) {
           return (
             <div className="custom-tooltip">
-              <p className="label">{`${payload[0].name} : ${payload[0].value}`}</p>
+              {/* <p className="label">{`${payload[0].name} : ${payload[0].value}`}</p> */}
               <p className="desc">date:{formatXAxis(label)}</p>
             </div>
           );
@@ -25,14 +25,16 @@ export default function dns_graph(props)
 {
 
     
+if(props.data!==undefined)
+console.log(props.data.payload);
 
-console.log(props.data);
-
-    const renderLineChart = (
+let renderLineChart =(<p>loading...</p>);
+if (props.data!== undefined)
+    renderLineChart = (
         <div>
             <ResponsiveContainer width="100%" height={400}>
-        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-        <Line type="monotone" dataKey="mean_rtt_ms" stroke="#8884d8" />
+        <ComposedChart syncId="anyId" width={800} height={400} data={JSON.parse(props.data.payload)} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <Line type="monotone" dataKey="maxRttMs" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
         <XAxis dataKey="date"   domain = {['auto', 'auto']}
       tickFormatter={formatXAxis}
@@ -47,7 +49,7 @@ console.log(props.data);
 
 
       <ResponsiveContainer width="100%" height={400}>
-        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <ComposedChart syncId="anyId" width={800} height={400} data={JSON.parse(props.data.payload)} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
         <Line type="monotone" dataKey="min_rtt_ms" stroke ="#82ca9d"/>
         <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
         <XAxis dataKey="date"   domain = {['auto', 'auto']}
@@ -62,8 +64,8 @@ console.log(props.data);
       </ResponsiveContainer>
 
       <ResponsiveContainer width="100%" height={400}>
-        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-        <Line type="monotone" dataKey="max_rtt_ms" stroke ="#FF5733"/>
+        <ComposedChart syncId="anyId" width={800} height={400} data={JSON.parse(props.data.payload)} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <Line type="monotone" dataKey="maxRttMs" stroke ="#FF5733"/>
         <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
         <XAxis dataKey="date"   domain = {['auto', 'auto']}
       tickFormatter={formatXAxis}

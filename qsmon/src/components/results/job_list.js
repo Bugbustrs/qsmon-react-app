@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 export default class List extends React.Component{
     constructor(props){
         super(props);
-        this.state ={data:null}
+        this.state ={data:null,type:''}
     }
 
     componentDidMount()
@@ -14,11 +14,21 @@ export default class List extends React.Component{
         console.log(this.props.location.pathname);
         let path =this.props.location.pathname;
         let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
-        console.log(queryParams);
+        let type=path.substring(path.indexOf('/',2)+1);
+        // console.log(queryParams);
         axios.get('http://jchavula-1.cs.uct.ac.za:7800/results/jobs/?'+queryParams).then(data=>{
-          this.setState({data});
+       // data = JSON.parse(data.data)
+        //data['date']=data.time['seconds'];
+
+//         for(let i =0;i<data.length;i++)
+//         {
+// data[i]['date'] =data[i]['time']['seconds'];
+//         }
+        console.log(JSON.parse(data.data.payload)); 
+    
+        this.setState({data:JSON.parse(data.data.payload),type:type});
           
-          console.log(data);
+          
           }).catch((e)=> {console.log('Error: '+e+' occurred');});
 
     }
@@ -29,25 +39,32 @@ this.props.history.push('/results');
 }
 
     render(){
-let data = this.state.data||[{type:'ping',rtt:12,id:"we23"},{type:'ping',rtt:22,id:"e3r3"},{type:'ping',rtt:32,id:"er32w"}]
+let data = this.state.data;
 
 let path =this.props.location.pathname;
         let type=path.substring(path.indexOf('/',2)+1);
+       if(data===undefined || data===null)
+       return (<p>loading...</p>)
+       else{
         return (
          <div>
+       
 
            <h3>{this.props.type} jobs</h3>
            <br></br>
             {  data.map((item,index)=>{
+              let jsonData = JSON.stringify(item,undefined,3)
+              let id =null;
+              if(item['_id']!==undefined)
+               id =item['_id']['$oid'];
 
               return (<div key={index}  className="card  text-left">
   <div className="card-body">
-    <h4 className="card-title">{item.type}</h4>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <p>{item.rtt} </p>
-    <p>{item.id} </p>
+  <h5 className='card-title'> job {index+1}</h5>
 
-    <Link  className="card-link" to={{pathname:'/results/measurements',search:'?type='+type+'&id='+item.id}}>view job results</Link>
+  <div><pre>{jsonData}</pre></div>
+
+    <Link  className="card-link" to={'/results/measurements?type='+this.state.type+'&id='+id}>view job results</Link>
   </div>
 </div>)
             })}
@@ -55,5 +72,6 @@ let path =this.props.location.pathname;
 
 
         );
+          }
     }
 }

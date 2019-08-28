@@ -20,6 +20,7 @@ let measurement_description = {
             key:getKey(),
             start_time:formatDate(state.start_time),
             end_time:formatDate(state.end_time),
+            count:state.count,
             interval_sec:1,
             priority:state.priority,
           parameters:{

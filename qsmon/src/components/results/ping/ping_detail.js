@@ -5,11 +5,14 @@ import React from 'react';
 export default  function dns_detail(props){
 
 
-  let data = props.data;
+  let data = JSON.parse(props.data.payload);
+  console.log(props.data.payload);
+
+  
     return (
-     <React.Fragment>
+     <div>
    
-  {data? data.map((item,index)=>{
+  {data?data.map((item,index)=>{
 //item['date']= moment(item['date']).format('Do MMM  YYYY')
     return (<div key={index} className="card text-left mb-2">
     <div className="card-body">
@@ -19,6 +22,6 @@ export default  function dns_detail(props){
   </div>)
 }):<div>loading data...</div>}
 
-     </React.Fragment>
+     </div>
     );
 }

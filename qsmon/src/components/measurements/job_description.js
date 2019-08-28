@@ -20,7 +20,7 @@ export default class Description extends React.Component
             start_time:"",
             end_time:"",
             interval_sec:1,
-            count:2,
+            count:1,
             priority:5,
             target:"",
             node_count:"",
@@ -52,7 +52,7 @@ this.setState({
 
 handleChange1 = e =>{
   if(e.target.name==='tcp_speed_test') console.log('tcp_speed_test:'+e.target.value);
-  this.setState({[e.target.name]:e.target.value})
+  this.setState({[e.target.name]:e.target.value});
 }
 
 handleSubmit = e =>{
@@ -125,7 +125,7 @@ handleSubmit = e =>{
   </div>
 <br/>
  {Form}
- <ToastContainer autoClose={8000}/>
+ <ToastContainer autoClose={3000}/>
   
     </form> 
     </React.Fragment>

@@ -35,7 +35,7 @@ let params = new URLSearchParams(this.props.location.search);
 
 console.log(params.get('type'));
 
-axios.get('https://jchavula-1.cs.uct.ac.za:7800/results/'+this.props.location.search).then(data=>{
+axios.get('http://jchavula-1.cs.uct.ac.za:7800/results/'+this.props.location.search).then(data=>{
 this.setState({data});
 console.log(data);
 }).catch((e)=> {console.log(e);});
@@ -56,6 +56,7 @@ console.log(data);
                 detail = <HttpDetail data ={data1['data']} ></HttpDetail>;
                 break;
             case 'ping':
+                console.log(data1['data']);
                 graph = <PingGraph data ={data1['data']} />
                 detail = <PingDetail data ={data1['data']} />
                 break;
