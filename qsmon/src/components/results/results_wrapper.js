@@ -47,7 +47,7 @@ console.log(data);
  let data1 =this.state.data;
         switch(params.get('type'))
         {
-            case "dns":
+            case "dns_lookup":
                 graph = <DNSGraph data ={data1['data']}/>;
                 detail = <DNSDetail data ={data1['data']} ></DNSDetail>;
                 break;
@@ -60,7 +60,7 @@ console.log(data);
                 graph = <PingGraph data ={data1['data']} />
                 detail = <PingDetail data ={data1['data']} />
                 break;
-            case 'tcp':
+            case 'tcp_speed_test':
                 graph =<TCPGraph data ={data1['data']}></TCPGraph>;
                 detail = <TCPDetail data ={data1['data']}></TCPDetail>
                 break;

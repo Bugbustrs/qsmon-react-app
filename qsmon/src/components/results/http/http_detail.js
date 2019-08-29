@@ -17,6 +17,7 @@ export default  function dns_detail(props){
     return (<div key={index} className="card text-left mb-2">
     <div className="card-body">
       <h4 className="card-title">measurement number {index}</h4>
+      
       <pre className="card-text"><code>{JSON.stringify(item, undefined, 2)}</code></pre>
     </div>
   </div>)

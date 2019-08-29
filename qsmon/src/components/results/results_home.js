@@ -16,9 +16,9 @@ export default function MeasurementList() {
       <Col md='3'><List/></Col>
       <Col md='9'>
   <Route path='/results/ping' render ={(props)=><JobList {...props} type='ping'/>}/>
-        <Route path='/results/dns' render ={(props)=><JobList {...props} type='DNS'/>}/>
+        <Route path='/results/dns_lookup' render ={(props)=><JobList {...props} type='DNS'/>}/>
         <Route path='/results/http' render ={(props)=><JobList {...props} type='HTTP'/>}/>
-        <Route path='/results/tcp' render ={(props)=><JobList {...props} type='TCP Speed Test'/>}/>
+        <Route path='/results/tcp_speed_test' render ={(props)=><JobList {...props} type='TCP Speed Test'/>}/>
         <Route path='/results/measurements' render={(props)=><MeasurementResults {...props}/>}/>
        </Col>
     </Row>
