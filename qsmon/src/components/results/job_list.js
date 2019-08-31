@@ -10,20 +10,13 @@ export default class List extends React.Component{
 
     componentDidMount()
     {
-        //will request a list of jobs here
         console.log(this.props.location.pathname);
         let path =this.props.location.pathname;
         let queryParams ='type='+path.substring(path.indexOf('/',2)+1);
         let type=path.substring(path.indexOf('/',2)+1);
    console.log(queryParams);
         axios.get('http://jchavula-1.cs.uct.ac.za:7800/results/jobs/?'+queryParams).then(data=>{
-       // data = JSON.parse(data.data)
-        //data['date']=data.time['seconds'];
-
-//         for(let i =0;i<data.length;i++)
-//         {
-// data[i]['date'] =data[i]['time']['seconds'];
-//         }
+ 
         console.log(JSON.parse(data.data.payload)); 
     
         this.setState({data:JSON.parse(data.data.payload),type:type});
@@ -46,7 +39,10 @@ let path =this.props.location.pathname;
        if(data===undefined || data===null)
        return (<p>loading...</p>)
        else{
+         if(data.length===0)
+          return <pre>There are no jobs scheduled</pre>
         return (
+
          <div>
        
 

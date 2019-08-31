@@ -8,11 +8,15 @@ function formatXAxis(tickItem) {
     }
 
     function CustomTooltip({ payload, label, active }) {
+      console.log(payload);
         if (active) {
           return (
-            <div className="custom-tooltip">
+            <div className="custom-tooltip card" style={{backgroundColor:'transparent',border:`0.5px solid ${payload[0].color}`}}>
               <p className="label">{`${payload[0].name} : ${payload[0].value}`}</p>
-              <p className="desc">date:{formatXAxis(label)}</p>
+              <p className='label'>IpAddress : {`${payload[0].payload.hostAddress}`}</p>
+              <p className='label'>hostName : {`${payload[0].payload.hostName}`}</p>
+
+              <p className="desc">date : {formatXAxis(label)}</p>
             </div>
           );
         }
@@ -24,18 +28,21 @@ function formatXAxis(tickItem) {
 export default function dns_graph(props)
 {
 
-    
+       
+if(props.data!==undefined)
+console.log(props.data); 
 
-console.log(props.data);
 
-    const renderLineChart = (
+let renderLineChart =(<p>loading...</p>);
+if (props.data!== undefined  && JSON.parse(props.data.payload).length>0)
+     {
+       renderLineChart = (
         <div>
             <ResponsiveContainer width="100%" height={400}>
-        <ComposedChart syncId="anyId" width={800} height={400} data={props.data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-        <Line type="monotone" dataKey="time_ms" stroke="#FF9C33" />
-        
+        <ComposedChart syncId="anyId" width={800} height={400} data={JSON.parse(props.data.payload)} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+        <Line type="monotone" dataKey="timeTaken" stroke="#ff7300" />
         <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-        <XAxis dataKey="date"   domain = {['auto', 'auto']}
+        <XAxis dataKey="time.seconds"   domain = {['auto', 'auto']}
       tickFormatter={formatXAxis}
   type='number'/>
         <YAxis />
@@ -47,6 +54,10 @@ console.log(props.data);
       </ResponsiveContainer>
 </div>
     );
+       }
+else{
+renderLineChart=(<pre>There are no measurements for this job</pre>);
+        }
     return (
         <React.Fragment>
 {renderLineChart}
